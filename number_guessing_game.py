@@ -1,19 +1,24 @@
 import random
 
-# Computer picks the random number btw 1 - 100
+# Computer picks a random number between 1 and 100
 number = random.randint(1, 100)
 guesses = 0
+max_guesses = 5
 
 # Keep asking the player for a guess
-while True:
-    guess = int(input("Guess a number btw 1 and 100"))
+while guesses < max_guesses:
+    guess = int(input(f"Guess a number between 1 and 100 ({max_guesses - guesses} guesses left): "))
     guesses += 1
     
-    # Check if the guss is correct
-    if guess = number:
-        print(f"Congrats! You got it in {guess} guesses!")
+    # Check if the guess is correct
+    if guess == number:
+        print(f"Congrats! You got it in {guesses} guesses!")
         break
     elif guess < number:
-        print(f"Your number {guess} is Too low! Try again.")
+        print("Too low! Try again.")
     else:
-        print(f"Your number {guess} is Too high! Try again")
+        print("Too high! Try again.")
+
+# If out of guesses
+if guesses >= max_guesses and guess != number:
+    print(f"Game over! The number was {number}.")
