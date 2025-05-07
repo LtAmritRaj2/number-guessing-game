@@ -15,9 +15,9 @@ while guesses < max_guesses:
         print(f"Congrats! You got it in {guesses} guesses!")
         break
     elif guess < number:
-        print("Too low! Try again.")
+        print("Too low! Try againnn.")
     else:
-        print("Too high! Try again.")
+        print("Too high! Try againnn.")
 
 # If out of guesses
 if guesses >= max_guesses and guess != number:
